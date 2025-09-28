@@ -1,0 +1,20 @@
+{
+    "name": "curvestech/laravel-request-filters",
+    "description": "Simpler way to map request queries to database queries in a seamless way that follows single responsibility principles",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Curvestech\\LaravelRequestFilters\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mubashar Abbas",
+            "email": "mubashir.abbas@outlook.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^11.0",
+        "illuminate/http": "^11.0"
+    }
+}
