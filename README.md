@@ -18,12 +18,6 @@ The service provider will be automatically registered via Laravel's package auto
 php artisan make:filter UserFilter
 ```
 
-Or with a model reference:
-
-```bash
-php artisan make:filter UserFilter --model=User
-```
-
 This creates a filter class in `app/Http/Filters/UserFilter.php`.
 
 ### 2. Add the Filterable Trait to Your Model
@@ -55,9 +49,9 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index(Request $request)
+    public function index(UserFilter $filter)
     {
-        $users = User::filter(new UserFilter($request))->get();
+        $users = User::filter($filter)->get();
         
         return response()->json($users);
     }
