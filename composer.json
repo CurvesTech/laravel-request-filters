@@ -2,6 +2,8 @@
     "name": "curvestech/laravel-request-filters",
     "description": "Simpler way to map request queries to database queries in a seamless way that follows single responsibility principle",
     "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "filters", "eloquent", "query", "request"],
     "autoload": {
         "psr-4": {
             "Curvestech\\LaravelRequestFilters\\": "src/"
@@ -14,7 +16,10 @@
         }
     ],
     "require": {
+        "php": "^8.0",
         "illuminate/database": "^8.0|^9.0|^10.0|^11.0|^12.0",
         "illuminate/http": "^8.0|^9.0|^10.0|^11.0|^12.0"
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
