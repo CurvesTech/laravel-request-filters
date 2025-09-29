@@ -9,6 +9,13 @@
             "Curvestech\\LaravelRequestFilters\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Curvestech\\LaravelRequestFilters\\LaravelRequestFiltersServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "Mubashar Abbas",
@@ -18,7 +25,9 @@
     "require": {
         "php": "^8.0",
         "illuminate/database": "^8.0|^9.0|^10.0|^11.0|^12.0",
-        "illuminate/http": "^8.0|^9.0|^10.0|^11.0|^12.0"
+        "illuminate/http": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/console": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0"
     },
     "minimum-stability": "stable",
     "prefer-stable": true
