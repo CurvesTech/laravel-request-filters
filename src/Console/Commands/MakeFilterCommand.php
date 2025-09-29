@@ -59,9 +59,7 @@ class MakeFilterCommand extends GeneratorCommand
     {
         $stub = $this->files->get($this->getStub());
 
-        $this->replaceNamespace($stub, $name)
+        return $this->replaceNamespace($stub, $name)
             ->replaceClass($stub, $name);
-
-        return $stub;
     }
 }
