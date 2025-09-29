@@ -8,22 +8,6 @@ use Illuminate\Database\Eloquent\Builder;
 class {{ class }} extends AbstractFilter
 {
     /**
-     * Apply filters to the query builder.
-     *
-     * Example usage in your {{ model }} model:
-     * 
-     * use Curvestech\LaravelRequestFilters\Traits\Filterable;
-     * 
-     * class {{ model }} extends Model
-     * {
-     *     use Filterable;
-     * }
-     * 
-     * Then in your controller:
-     * {{ model }}::filter(new {{ class }}($request))->get();
-     */
-
-    /**
      * Filter by name (example filter method).
      * URL: ?name=john
      *
@@ -36,51 +20,4 @@ class {{ class }} extends AbstractFilter
         return $builder->where('name', 'like', '%' . $value . '%');
     }
 
-    /**
-     * Filter by status (example filter method).
-     * URL: ?status=active
-     *
-     * @param Builder $builder
-     * @param mixed $value
-     * @return Builder
-     */
-    public function status(Builder $builder, $value): Builder
-    {
-        return $builder->where('status', $value);
-    }
-
-    /**
-     * Filter by date range (example filter method).
-     * URL: ?created_from=2023-01-01&created_to=2023-12-31
-     *
-     * @param Builder $builder
-     * @param mixed $value
-     * @return Builder
-     */
-    public function createdFrom(Builder $builder, $value): Builder
-    {
-        return $builder->where('created_at', '>=', $value);
-    }
-
-    public function createdTo(Builder $builder, $value): Builder
-    {
-        return $builder->where('created_at', '<=', $value);
-    }
-
-    /**
-     * Filter by multiple IDs (example filter method).
-     * URL: ?ids=1,2,3 or ?ids[]=1&ids[]=2&ids[]=3
-     *
-     * @param Builder $builder
-     * @param mixed $value
-     * @return Builder
-     */
-    public function ids(Builder $builder, $value): Builder
-    {
-        if (is_string($value)) {
-            $value = explode(',', $value);
-        }
-        
-        return $builder->whereIn('id', $value);
-    }
 }

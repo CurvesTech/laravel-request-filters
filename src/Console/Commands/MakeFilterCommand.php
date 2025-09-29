@@ -50,18 +50,6 @@ class MakeFilterCommand extends GeneratorCommand
     }
 
     /**
-     * Get the console command options.
-     *
-     * @return array
-     */
-    protected function getOptions()
-    {
-        return [
-            ['model', 'm', InputOption::VALUE_OPTIONAL, 'The model that the filter applies to'],
-        ];
-    }
-
-    /**
      * Build the class with the given name.
      *
      * @param  string  $name
@@ -74,29 +62,6 @@ class MakeFilterCommand extends GeneratorCommand
         $this->replaceNamespace($stub, $name)
             ->replaceClass($stub, $name);
 
-        $this->replaceModel($stub);
-
         return $stub;
-    }
-
-    /**
-     * Replace the model for the given stub.
-     *
-     * @param  string  $stub
-     * @return $this
-     */
-    protected function replaceModel(&$stub)
-    {
-        $model = $this->option('model');
-        
-        if ($model) {
-            $stub = str_replace('{{ model }}', $model, $stub);
-            $stub = str_replace('{{model}}', $model, $stub);
-        } else {
-            $stub = str_replace('{{ model }}', 'YourModel', $stub);
-            $stub = str_replace('{{model}}', 'YourModel', $stub);
-        }
-
-        return $this;
     }
 }
