@@ -1,6 +1,6 @@
 {
     "name": "curvestech/laravel-request-filters",
-    "description": "Simpler way to map request queries to database queries in a seamless way that follows single responsibility principles",
+    "description": "Simpler way to map request queries to database queries in a seamless way that follows single responsibility principle",
     "type": "library",
     "autoload": {
         "psr-4": {
@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "illuminate/database": "^11.0",
-        "illuminate/http": "^11.0"
+        "illuminate/database": "^8.0|^9.0|^10.0|^11.0|^12.0",
+        "illuminate/http": "^8.0|^9.0|^10.0|^11.0|^12.0"
     }
 }
