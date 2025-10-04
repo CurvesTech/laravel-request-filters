@@ -16,7 +16,10 @@ abstract class AbstractFilter
     public function apply(Builder $builder): Builder
     {
         foreach ($this->request->all() as $filter => $value) {
-            if (method_exists($this, $filter)) {
+            if (
+                method_exists($this, $filter) &&
+                !empty($value)
+            ) {
                 $builder = $this->$filter($builder, $value);
             }
         }
