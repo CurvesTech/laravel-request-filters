@@ -3,7 +3,6 @@
 namespace Curvestech\LaravelRequestFilters\Console\Commands;
 
 use Illuminate\Console\GeneratorCommand;
-use Symfony\Component\Console\Input\InputOption;
 
 class MakeFilterCommand extends GeneratorCommand
 {
